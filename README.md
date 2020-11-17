@@ -59,7 +59,7 @@
 
 <div align="center"> <img src="photo/6.jpg"</img> </div> 
 
-<div align = "center">>图 6：执行完POST指令之后的客户端的cookie值</div>
+<div align = "center">图 6：执行完POST指令之后的客户端的cookie值</div>
 
 #### 能够稳定处理大量并发任务
 
@@ -113,9 +113,9 @@
 
 <div align="center"> <img src="photo/14.jpg"</img> </div> 
 
-<div align = "center">>图 14：网页浏览</div>
+<div align = "center">图 14：网页浏览</div>
 
-![img](photo/15.jpg)
+<div align="center"> <img src="photo/15.jpg"</img> </div> 
 
 <div align = "center">图 15：访问百度网页</div>
 

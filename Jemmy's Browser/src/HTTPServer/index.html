@@ -1,0 +1,1313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=1280"/>
+  <meta name="_xsrf" content="">
+  <meta name="layoutmode" content="standard">
+  <meta name="imagemode" content="force">
+  <title>优课联盟——共建共享，学分互认</title>
+  <meta name="Keywords" content="优课,优课在线,慕课,mooc,优课联盟,深大,深圳大学,在线教育,高等教育,继续教育,首批国家精品课申报平台">
+  <meta name="Description" content="优课在线是新一代互联网自主学习平台，可为用户提供MOOC，混合式学习及SPOC学习方式。">
+    <link rel="shortcut icon" href="http://assets.uooconline.com/upload/uooc-www/org/logo/2018/11/05/181105103907_650ac3_uooclogo1.png" type="image/x-icon" />
+    <link rel="search" type="application/opensearchdescription+xml" href="//assets.uooconline.com/search.xml"
+      title="优课"/>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/normalize/8.0.0/normalize.min.css" />
+  <link rel="stylesheet" type="text/css" href="//assets.uooconline.com/base/fonts/iconfont-0645ae236e.css" />
+  <link rel="stylesheet" type="text/css" href="//assets.uooconline.com/base/css/public-64c362ecae.css" />
+  
+  <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+  <script type='text/javascript' src='https://cdn.staticfile.org/layer/2.3/layer.js'></script>
+  <script type='text/javascript' src='//assets.uooconline.com/base/js/base-e2af1f0d87.js'></script>
+
+  <script type="text/javascript">
+(function () {
+    // 全局
+    window.isLogin = "";
+    window.staticRoot = "//assets.uooconline.com";
+    window.webRoot = "http://www.uooc.net.cn";
+    window.appConfig = {
+        userAvatar: "",
+        userName: ""
+    };
+
+    // 移动端进入跳转到APP下载页面
+    var USER_AGENT = navigator.userAgent;
+    var AGENTS = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
+    for(var v = 0; v < AGENTS.length; v++){
+        if(USER_AGENT.search(AGENTS[v]) != -1){
+            location.href = "/app/download"
+            break;
+        }
+    }
+    
+    // ajax全局设置
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            var _xsrf = $('meta[name="_xsrf"]').attr('content')
+            xhr.setRequestHeader('XSRF', _xsrf);
+        }
+    });
+
+    // 百度统计
+    var hm = document.createElement("script");
+    var curHref = location.href;
+    var baiduHash = curHref.search('api.uooc.online') > -1 ? 'b4444460a6edf29501337cf2c90555cc' : curHref.search('abc.org-beta.uooconline.com') > -1 ? '30a1929a34bfc7398f8dcef943f7e1b8' : curHref.search('beta.uooconline.com') > -1 ? '1c4aa021265744d2b8f0a9a59c3866c9' : curHref.search('uooc.net.cn') > -1 ? 'd1a5821d95582e27154fc4a1624da9e3' : '7c307a902207c45c0eaf86510e2c24a1';
+    hm.src = '//hm.baidu.com/hm.js?' + baiduHash;
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+
+<body>
+
+<div class="layourt-header-fixed-bg"></div>
+
+<div id="layout-header" class="layout-header layout-header-fixed">
+  <div class="layout-wrapper clearfix">
+    <a href="http://www.uooc.net.cn" class="layout-header-logo">
+      <img src="http://assets.uooconline.com/upload/uooc-www/org/logo/2018/11/05/181105102853_356892_优课联盟logo.png">
+    </a>
+
+        <!-- 导航菜单 -->
+    <ul class="layout-header-nav">
+            <li>
+        <a class=" active"
+          href="http://www.uooc.net.cn/league/union">
+          首页        </a>
+      </li>
+            <li>
+        <a class=" "
+          href="http://www.uooc.net.cn/league/union/course">
+          课程        </a>
+      </li>
+            <li>
+        <a class=" "
+          href="http://www.uooc.net.cn/league/union/org">
+          联盟院校        </a>
+      </li>
+            <li>
+        <a class=" "
+          href="http://www.uooc.net.cn/league/union/intro">
+          关于我们        </a>
+      </li>
+          </ul>
+    <div class="layout-header-right ">
+      <div class="uooc-app-dowload">
+        <span class="uooc-app-btn"><i class="iconfont icon-kehuduan"></i>移动端</span>
+        <div class="uooc-app-panel layout-header-panel-arrow">
+          <div class="clearfix">
+            <div class="uooc-app-qr">
+              <img src="//assets.uooconline.com/base/images/QR_app.png" alt="立即下载">
+              <p>下载优课UOOC APP</p>
+            </div>
+            <div class="uooc-app-qr">
+              <img src="//assets.uooconline.com/base/images/QR_gzh.png" alt="立即下载">
+              <p>扫描二维码关注公众号</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 搜索 -->
+            <form class="layout-header-search" action="http://www.uooc.net.cn/search" method="get" onsubmit="javascript: if(!document.getElementById('keyword').value) { return false;}">
+        <input type="text" name="q" id="keyword" value="" placeholder="请输入课程/学校/主讲老师" title="请输入课程/学校开始找课" />
+      </form>
+      
+      <!-- 已登录 -->
+            <!-- 未登录 -->
+      <span id="loginBtn" ng-click="layerLogin()" class="uc-btn uc-btn-small uc-btn-blue uc-btn-border">登录</span>
+      <span id="registerBtn" ng-click="layerRegister()" class="uc-btn uc-btn-small uc-btn-blue">注册</span>
+          </div>
+  </div>
+</div>
+
+
+<link rel="stylesheet" type="text/css" href="//assets.uooconline.com/league/union/css/index-41f29f347d.css" />
+<link href="https://cdn.staticfile.org/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
+<script src="https://cdn.staticfile.org/Swiper/3.4.2/js/swiper.min.js"></script>
+
+<div class="middler bg-grey pt30 pb60">
+  <div class="layout-wrapper">
+
+    <!--顶部区域-->
+    <div class="slideBox">
+
+      <!--Banner-->
+      <div class="banner">
+        <div class="AD swiper-container" id="swiper-banner">
+          <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+              <a href="http://www.uooc.net.cn/course/2144634828">
+                <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/common/2018/11/05/181105102838_44fc62_180202071250_0455dd_%E5%93%81%E8%AF%97%E8%AE%BA%E5%8F%B2%E6%94%B9.jpg">
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a href="http://www.uooc.net.cn/course/2016882533">
+                <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/common/2018/11/05/181105102938_507e61_180202070411_3ca25e_%E5%A4%A7%E5%AD%A6%E8%AE%A1%E7%AE%97%E6%9C%BA.jpg">
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a href="http://www.uooc.net.cn/course/1645680089">
+                <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/common/2018/11/05/181105103052_ffdb72_180118112400_cf20a5_%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E7%BB%8F%E6%B5%8E%E5%AD%A6.jpg">
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a href="http://www.uooc.net.cn/course/649216799">
+                <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/common/2018/11/05/181105103128_4625a3_180202071419_bc03bf_%E7%A7%AF%E6%9E%81%E5%BF%83%E7%90%86%E5%AD%A6.jpg">
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a href="http://www.uooc.net.cn/course/1985617959">
+                <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/common/2018/11/05/181105103158_b4625d_180712090748_f8917a_%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E4%BC%A0.png">
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a href="http://www.uooc.net.cn/course/1303857546">
+                <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/common/2018/11/05/181105103225_867666_180903035237_6f99f1_%E4%BA%A4%E9%99%85%E8%8B%B1%E8%AF%AD%E5%86%99%E4%BD%9C.jpg">
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a href="http://www.uooconline.com/course/247432629">
+                <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/common/2018/11/05/181105103250_681813_180920014518_098df0_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E5%AF%BC%E8%AE%BA.png">
+              </a>
+            </div>
+                      </div>
+          <div class="swiper-pagination banner-pagination"></div>
+          <div class="prevnextBtn banner-prev"><i class="iconfont icon-arrow-left"></i></div>
+          <div class="prevnextBtn banner-next"><i class="iconfont icon-arrow-right"></i></div>
+        </div>
+      </div>
+
+      <!--学科导航-->
+      <div class="subjectNav">
+        <ul>
+                    <li><a class="oneline" href="/league/union/course?category=21&page=1"><i class="iconfont icon-yisheng"></i>
+              理学·工学</a></li>
+                    <li><a class="oneline" href="/league/union/course?category=28&page=1"><i class="iconfont icon-jisuanji"></i>
+              计算机</a></li>
+                    <li><a class="oneline" href="/league/union/course?category=18&page=1"><i class="iconfont icon-jiaoyuyuyan"></i>
+              教育·语言</a></li>
+                    <li><a class="oneline" href="/league/union/course?category=19&page=1"><i class="iconfont icon-wenxueyishu"></i>
+              文学·艺术</a></li>
+                    <li><a class="oneline" href="/league/union/course?category=30&page=1"><i class="iconfont icon-chuangyezhichang"></i>
+              创业·职场</a></li>
+                    <li><a class="oneline" href="/league/union/course?category=15&page=1"><i class="iconfont icon-zeshiwenhua"></i>
+              哲史·文化</a></li>
+                    <li><a class="oneline" href="/league/union/course?category=16&page=1"><i class="iconfont icon-jingjiguanli"></i>
+              经济·管理</a></li>
+                    <li><a class="oneline" href="/league/union/course?category=23&page=1"><i class="iconfont icon-yixuenonxue"></i>
+              医学</a></li>
+                    <li><a class="oneline" href="/league/union/course?category=29&page=1"><i class="iconfont icon-xinlixue"></i>
+              心理学</a></li>
+          
+                    <li id="subjectNav-more"><a href="javascript:;"><i class="iconfont icon-xia" style="font-size: 24px; position: relative; top: 3px;"></i>查看更多</a></li>
+                    <li><a class="oneline" href="/league/union/course?category=17&page=1"><i class="iconfont icon-shehuifalv"></i>
+              社会·法律</a></li>
+                    <li><a class="oneline" href="/league/union/course?category=80&page=1"><i class="iconfont icon-zeshiwenhua"></i>
+              农学</a></li>
+                            </ul>
+      </div>
+
+      <!--快捷登录-->
+      <div class="shortcuter">
+        
+        <!--未登录-->
+        <div class="shortcut-unlogin">
+          <h3 class="shortcut-title">
+            共建共享<br>学分互认          </h3>
+          <div class="shortcut-img"></div>
+          <div><span id="homeLogin" class="loginBtn Btn Btn-blueGra Btn-full">登录</span></div>
+        </div>
+
+              </div>
+    </div>
+
+    <!--新闻-->
+        <div class="indexNew clearfix">
+      <a class="indexNew-more fl_right" href="/league/union/news">查看全部新闻&nbsp;&gt;</a>
+      <div class="indexNew-info" id="indexNew-info">
+        <ul>
+                    <li><a class="oneline" href="http://www.uooc.net.cn/league/union/detail/nid/2102948885">
+              直播预告|中国慕课大会“识变 应变 求变”直播</a></li>
+                    <li><a class="oneline" href="http://www.uooc.net.cn/league/union/detail/nid/2061682841">
+              “我与MOOC故事”征集获奖名单公布</a></li>
+                    <li><a class="oneline" href="http://www.uooc.net.cn/league/union/detail/nid/771724328">
+              MOOC课程现向社会学员开放暑期班</a></li>
+                    <li><a class="oneline" href="http://www.uooc.net.cn/league/union/detail/nid/192381361">
+              优课联盟APP【优课UOOC】 V1.0.0版本正式上线，请同学们下载使用</a></li>
+                  </ul>
+      </div>
+    </div>
+    
+    <!--推荐课程-->
+        <div class="recommendCourse">
+      <div class="topTitle clearfix">
+        <h2 class="topTitle-title" style="background-image: url(//assets.uooconline.com/league/union/images/title_0.png);">推荐课程</h2>
+        <a href="/league/union/course" class="s-more topTitle-more">查看更多</a>
+      </div>
+      <div class="recommendCourse-container">
+        <div class="prevnextBtn recommendCourse-prev"><i class="iconfont icon-arrow-left"></i></div>
+        <div class="prevnextBtn recommendCourse-next"><i class="iconfont icon-arrow-right"></i></div>
+        <div id="swiper-course" class="recommendCourse-main clearfix swiper-container">
+          <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+              <a class="courseItem" href="/course/1645680089" target="_blank">
+                <div class="courseItem-img">
+                  <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course347/cover/170905102508_f61eb7_3d223c9c-c5ef-41cc-9619-bc6be8bedc90_thumb.png">
+                </div>
+                <div class="courseItem-info">
+                  <div class="courseItem-info-main">
+                    <h3 class="courseItem-title oneline">
+                      生活中的经济学                    </h3>
+                    <p class="courseItem-from">
+                      <span class="courseItem-org oneline">
+                        深圳大学</span><span class="courseItem-teacher oneline">
+                        陶一桃</span>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a class="courseItem" href="/course/1568824353" target="_blank">
+                <div class="courseItem-img">
+                  <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course355/cover/170908074349_97ce47_ded16c7c-f415-4e3d-967e-3ffe9eb61d20_thumb.png">
+                </div>
+                <div class="courseItem-info">
+                  <div class="courseItem-info-main">
+                    <h3 class="courseItem-title oneline">
+                      唐宋词与人生                    </h3>
+                    <p class="courseItem-from">
+                      <span class="courseItem-org oneline">
+                        深圳大学</span><span class="courseItem-teacher oneline">
+                        范晓燕</span>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a class="courseItem" href="/course/649216799" target="_blank">
+                <div class="courseItem-img">
+                  <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course349/cover/170822103412_273f8d_2f5af6ca-18ee-4783-b162-c770f16c7dc9_thumb.png">
+                </div>
+                <div class="courseItem-info">
+                  <div class="courseItem-info-main">
+                    <h3 class="courseItem-title oneline">
+                      积极心理学                    </h3>
+                    <p class="courseItem-from">
+                      <span class="courseItem-org oneline">
+                        深圳大学</span><span class="courseItem-teacher oneline">
+                        王晓钧</span>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a class="courseItem" href="/course/1086630458" target="_blank">
+                <div class="courseItem-img">
+                  <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course348/cover/170814035346_ab28e0_4d5996a1-6672-44fd-a98f-6aee21e8758e_thumb.png">
+                </div>
+                <div class="courseItem-info">
+                  <div class="courseItem-info-main">
+                    <h3 class="courseItem-title oneline">
+                      经济数据解读                    </h3>
+                    <p class="courseItem-from">
+                      <span class="courseItem-org oneline">
+                        深圳大学</span><span class="courseItem-teacher oneline">
+                        范霄文</span>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a class="courseItem" href="/course/1942560944" target="_blank">
+                <div class="courseItem-img">
+                  <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course286/cover/170925030930_49353d_4adc8372-7524-485c-a73e-b88197ef4bc7_thumb.png">
+                </div>
+                <div class="courseItem-info">
+                  <div class="courseItem-info-main">
+                    <h3 class="courseItem-title oneline">
+                      拓展英语词汇                    </h3>
+                    <p class="courseItem-from">
+                      <span class="courseItem-org oneline">
+                        青岛大学</span><span class="courseItem-teacher oneline">
+                        李秀清</span>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+                        <div class="swiper-slide">
+              <a class="courseItem" href="/course/1915062131" target="_blank">
+                <div class="courseItem-img">
+                  <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course233/cover/170823181131_fc5aa7_a3956db5-b7f7-4693-a94a-0f8bd94c86ec_thumb.png">
+                </div>
+                <div class="courseItem-info">
+                  <div class="courseItem-info-main">
+                    <h3 class="courseItem-title oneline">
+                      音乐与健康                    </h3>
+                    <p class="courseItem-from">
+                      <span class="courseItem-org oneline">
+                        宁波大学</span><span class="courseItem-teacher oneline">
+                        王蕾</span>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+                      </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 运营位A -->
+        <div id="swiper-position-a" class="AD layout-wrapper">
+      <div class="swiper-wrapper">
+                <div class="swiper-slide">
+          <a class="yunying" href="http://www.uooc.net.cn/course/649216799">
+            <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/common/2018/11/05/181105104122_7e9a55_171031010000_166e9f_%E8%BF%90%E8%90%A5%E4%BD%8D01.png">
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a class="yunying" href="http://www.uooc.net.cn/course/1915062131">
+            <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/common/2018/11/05/181105104142_9007a8_171031010004_a624ba_%E8%BF%90%E8%90%A5%E4%BD%8D02.png">
+          </a>
+        </div>
+              </div>
+    </div>
+    
+    <!--学科课程-->
+        <div class="discipline">
+      <div class="topTitle clearfix">
+        <h2 class="topTitle-title" style="background-image: url(http://assets.uooconline.com/upload/uooc-www/org/org139/171031004430_e4db39_理学工学.png);">
+          http://assets.uooconline.com/upload/uooc-www/org/org139/171031004430_e4db39_理学工学.png        </h2>
+
+        <div class="topTitle-tag">
+                    <span><a href="/league/union/search?category=21&keyword=地质及材料">
+              地质及材料</a></span>
+                    <span><a href="/league/union/search?category=21&keyword=物理">
+              物理</a></span>
+                    <span><a href="/league/union/search?category=21&keyword=电气信息">
+              电气信息</a></span>
+                    <span><a href="/league/union/search?category=21&keyword=自然生命科学">
+              自然生命科学</a></span>
+                    <span><a href="/league/union/search?category=21&keyword=工业">
+              工业</a></span>
+                    <span><a href="/league/union/search?category=21&keyword=土木">
+              土木</a></span>
+                    <span><a href="/league/union/search?category=21&keyword=数学">
+              数学</a></span>
+                    <span><a href="/league/union/search?category=21&keyword=化学">
+              化学</a></span>
+                  </div>
+      </div>
+      <div class="discipline-container clearfix">
+        <a class="discipline-img fl_left" style="background-image: url(http://assets.uooconline.com/upload/uooc-www/org/org139/171031004424_4f42d5_理学工学.jpg);" href="/league/union/course?category=21">
+          <a class="discipline-img-a" style="display:none">更多课程</a>
+        </a>
+        <div class="discipline-list clearfix">
+                    <a class="courseItem" href="/course/51892778">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course172/cover/170814055154_8e8f2d_611cc699-0923-45ea-a1aa-e9d4ff3a02a9_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  高等数学A(1)                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    赵冰</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1228056815">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course397/cover/170817024814_09deb4_0462c062-8e37-4d4c-a17d-299251fa451d_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  物理与文化                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    河南理工大学</span><span class="courseItem-teacher oneline">
+                    薛中会</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/923220023">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course341/cover/170825031359_93d58f_0209f4b0-02c8-4d5d-9705-2ed1909b6df2_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  概率论与数理统计                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    刘宏伟</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1836346264">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course294/cover/170831033046_0deab7_7b70a833-0e91-4635-b5f7-2ce2b1527990_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  视觉与色彩                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    姚其</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/899566864">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course254/cover/170804085503_f9bab5_08d194bb-5064-4dc9-ae37-c4860a727f75_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  人工智能技术与现代应用                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    唐雪嵩</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1066092861">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course231/cover/170911025422_60d4ff_8367c7e7-8bc8-48c6-af50-fc27a1743969_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  建筑艺术与赏析                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    哈尔滨学院</span><span class="courseItem-teacher oneline">
+                    王志伟</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1055371260">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course178/cover/170904055439_99d506_f587e1c1-3b96-40b1-9bb1-ec15aff4a8c2_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  西方古典建筑欣赏                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    朱宏宇</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1985617959">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/cover/2018/09/03/180903072147_a991b6_2f73255d-4bad-4543-b723-8be63406ee25_900x620_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  模拟电子技术                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    费跃农</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                  </div>
+      </div>
+    </div>
+            <div class="discipline">
+      <div class="topTitle clearfix">
+        <h2 class="topTitle-title" style="background-image: url(http://assets.uooconline.com/upload/uooc-www/org/org139/171031004724_91d792_计算机.png);">
+          http://assets.uooconline.com/upload/uooc-www/org/org139/171031004724_91d792_计算机.png        </h2>
+
+        <div class="topTitle-tag">
+                    <span><a href="/league/union/search?category=28&keyword=网络科技">
+              网络科技</a></span>
+                    <span><a href="/league/union/search?category=28&keyword=产品设计">
+              产品设计</a></span>
+                    <span><a href="/league/union/search?category=28&keyword=应用">
+              应用</a></span>
+                    <span><a href="/league/union/search?category=28&keyword=软件工程">
+              软件工程</a></span>
+                    <span><a href="/league/union/search?category=28&keyword=数据库">
+              数据库</a></span>
+                    <span><a href="/league/union/search?category=28&keyword=编程语言">
+              编程语言</a></span>
+                    <span><a href="/league/union/search?category=28&keyword=计算机基础">
+              计算机基础</a></span>
+                  </div>
+      </div>
+      <div class="discipline-container clearfix">
+        <a class="discipline-img fl_left" style="background-image: url(http://assets.uooconline.com/upload/uooc-www/org/org139/171031004720_9921dd_计算机.jpg);" href="/league/union/course?category=28">
+          <a class="discipline-img-a" style="display:none">更多课程</a>
+        </a>
+        <div class="discipline-list clearfix">
+                    <a class="courseItem" href="/course/757743049">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course171/cover/170825024742_074716_a177e91f-9288-4693-be57-e79145502e02_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  Java语言程序设计                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    潘微科</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1837154556">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course434/cover/170825024618_74ef38_8ca53058-4ea4-4b63-bdbc-9e7ac74e2f56_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  计算思维导论                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    广西科技大学</span><span class="courseItem-teacher oneline">
+                    唐培和</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/265497499">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course433/cover/170804074043_62489e_0e56a582-a5ae-4a31-b301-35ec910d4283_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  大学计算机信息技术                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    金陵科技学院</span><span class="courseItem-teacher oneline">
+                    李娟</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1733476875">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course385/cover/170825024719_db7644_2c816353-e387-44d5-8ce7-00b6482646a2_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  C君带你玩编程                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    昆明理工大学</span><span class="courseItem-teacher oneline">
+                    方娇莉</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/368365928">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course342/cover/170825024847_a1c2bc_4de362e9-273e-49bb-b9d1-cb67398330af_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  程序设计基础(C语言)                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    杨艳丽</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1936509681">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/course/course339/cover/55273f6c007a121a/1270899c-aa66-4d80-8b8e-c20c5e49b999_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  网络动画设计Flash(基础篇)                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    涂相华</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1592050758">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course336/cover/170804084020_87ba8b_1d88064f-2073-43cd-b448-6d222864e97f_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  多媒体技术及应用                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    王志强</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/2016882533">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course335/cover/170825024808_2ea3cc_1448a827-b873-4007-9f49-fcaf7dd772fe_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  大学计算机                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    王志强</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                  </div>
+      </div>
+    </div>
+            <div id="swiper-position-b" class="AD">
+      <div class="swiper-wrapper">
+                <div class="swiper-slide">
+          <a class="yunying" href="http://www.uooc.net.cn/course/1568824353">
+            <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/common/2018/11/05/181105104206_c2bbb1_171031010046_ae69ac_%E8%BF%90%E8%90%A5%E4%BD%8D03.png">
+          </a>
+        </div>
+              </div>
+    </div>
+                <div class="discipline">
+      <div class="topTitle clearfix">
+        <h2 class="topTitle-title" style="background-image: url(http://assets.uooconline.com/upload/uooc-www/org/org139/171031004930_754424_教育语言.png);">
+          http://assets.uooconline.com/upload/uooc-www/org/org139/171031004930_754424_教育语言.png        </h2>
+
+        <div class="topTitle-tag">
+                    <span><a href="/league/union/search?category=18&keyword=运动健身">
+              运动健身</a></span>
+                    <span><a href="/league/union/search?category=18&keyword=教育学">
+              教育学</a></span>
+                    <span><a href="/league/union/search?category=18&keyword=小语种">
+              小语种</a></span>
+                    <span><a href="/league/union/search?category=18&keyword=汉语">
+              汉语</a></span>
+                    <span><a href="/league/union/search?category=18&keyword=英语">
+              英语</a></span>
+                  </div>
+      </div>
+      <div class="discipline-container clearfix">
+        <a class="discipline-img fl_left" style="background-image: url(http://assets.uooconline.com/upload/uooc-www/org/org139/171031004926_d9041e_教育语言.jpg);" href="/league/union/course?category=18">
+          <a class="discipline-img-a" style="display:none">更多课程</a>
+        </a>
+        <div class="discipline-list clearfix">
+                    <a class="courseItem" href="/course/1804757230">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course536/cover/f3a8b6aa85c20676/宣传照片_crop_thumb.jpg">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  国防教育-军事理论                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    西安交通大学</span><span class="courseItem-teacher oneline">
+                    张正明</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/143796723">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course361/cover/170825031018_b22b07_b4ca3a37-f872-4152-a21d-7c265113a296_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  英语深度阅读                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    刘毅</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/210162343">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course293/cover/170804084312_1ce398_ca2cedbd-0779-4bd1-92d7-47807b5c5e93_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  现代教育技术应用                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    河南大学</span><span class="courseItem-teacher oneline">
+                    汪基德</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1712045709">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course279/cover/170825030125_32b548_b8a83d94-0df5-4b73-a883-78461701d056_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  大学英语创新写作                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    河南大学</span><span class="courseItem-teacher oneline">
+                    穆春玲</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/166296284">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course274/cover/170830094122_8da914_114b2fbb-616d-4337-a668-c530fc2f02d9_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  英语畅谈中国                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    湖北大学</span><span class="courseItem-teacher oneline">
+                    王志茹</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/965778067">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course265/cover/170825030154_29efe6_2b0cb33d-8b36-4d86-b756-65010ad42d2b_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  英语语音                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    湖北大学</span><span class="courseItem-teacher oneline">
+                    化聪超</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1537459646">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course264/cover/170804084446_4bef73_7c92302a-5f75-4f24-9ad4-4b38fde4a617_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  大学葡萄牙语                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    湖北大学</span><span class="courseItem-teacher oneline">
+                    苟晓姣</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/266545510">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course240/cover/170804084230_595e29_b3584ed1-829a-4728-9049-b85dc2968158_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  健美运动                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    哈尔滨学院</span><span class="courseItem-teacher oneline">
+                    李大威</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                  </div>
+      </div>
+    </div>
+            <div class="discipline">
+      <div class="topTitle clearfix">
+        <h2 class="topTitle-title" style="background-image: url(http://assets.uooconline.com/upload/uooc-www/org/org139/171031005121_01a441_文学艺术.png);">
+          http://assets.uooconline.com/upload/uooc-www/org/org139/171031005121_01a441_文学艺术.png        </h2>
+
+        <div class="topTitle-tag">
+                    <span><a href="/league/union/search?category=19&keyword=设计">
+              设计</a></span>
+                    <span><a href="/league/union/search?category=19&keyword=媒体">
+              媒体</a></span>
+                    <span><a href="/league/union/search?category=19&keyword=艺术">
+              艺术</a></span>
+                    <span><a href="/league/union/search?category=19&keyword=文学">
+              文学</a></span>
+                  </div>
+      </div>
+      <div class="discipline-container clearfix">
+        <a class="discipline-img fl_left" style="background-image: url(http://assets.uooconline.com/upload/uooc-www/org/org139/171031005118_cb472f_文学艺术.jpg);" href="/league/union/course?category=19">
+          <a class="discipline-img-a" style="display:none">更多课程</a>
+        </a>
+        <div class="discipline-list clearfix">
+                    <a class="courseItem" href="/course/1967859040">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course430/cover/170827175112_f5ae97_180b83b2-08a8-4c61-b028-1fe4adcb11fe_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  好玩的广告学                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    宁波大学</span><span class="courseItem-teacher oneline">
+                    汤志耘</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1398781064">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course374/cover/170827174906_e99e17_7c66fe23-e6a7-4907-9947-c46f9bf1e16b_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  大学语文                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    韩山师范学院</span><span class="courseItem-teacher oneline">
+                    刘文菊</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/846198018">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course356/cover/170804092726_98709b_e4557526-a2af-420d-bdc5-27cccaa5c7d2_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  金瓶梅人物写真                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    左江</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/779921283">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course345/cover/170827175549_09617d_8de92c17-6a96-4bd4-9189-05beeb84e45f_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  艺术设计鉴赏                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    涂星</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1126236413">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course295/cover/170814040147_c5d760_8b414907-2eb8-47ba-9d60-bc2c511021eb_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  艺术与生活                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    侯佳彤</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/340866859">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course289/cover/170814040446_217369_03e3e024-dd1b-46c4-a106-a6ddc8f91286_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  古典文学的城市书写                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    苏州大学</span><span class="courseItem-teacher oneline">
+                    杨旭辉</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/912498422">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course288/cover/170908075144_7fd619_6e6b9d56-9d87-48bb-aa5c-8873c55ca938_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  理解广告                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    苏州大学</span><span class="courseItem-teacher oneline">
+                    胡明宇</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1263074080">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course238/cover/170823180643_602dc6_283cc76d-91a9-42a9-8049-5b8a1a76b2f0_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  汉字书写的艺术                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    哈尔滨学院</span><span class="courseItem-teacher oneline">
+                    王柏松</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                  </div>
+      </div>
+    </div>
+            <div class="discipline">
+      <div class="topTitle clearfix">
+        <h2 class="topTitle-title" style="background-image: url(http://assets.uooconline.com/upload/uooc-www/org/org139/171103124700_4e2764_创业职场.png);">
+          http://assets.uooconline.com/upload/uooc-www/org/org139/171103124700_4e2764_创业职场.png        </h2>
+
+        <div class="topTitle-tag">
+                    <span><a href="/league/union/search?category=30&keyword=创业指南">
+              创业指南</a></span>
+                    <span><a href="/league/union/search?category=30&keyword=就业指导">
+              就业指导</a></span>
+                    <span><a href="/league/union/search?category=30&keyword=职场经验">
+              职场经验</a></span>
+                  </div>
+      </div>
+      <div class="discipline-container clearfix">
+        <a class="discipline-img fl_left" style="background-image: url(http://assets.uooconline.com/upload/uooc-www/org/org139/171103124651_b0d877_创业职场.jpg);" href="/league/union/course?category=30">
+          <a class="discipline-img-a" style="display:none">更多课程</a>
+        </a>
+        <div class="discipline-list clearfix">
+                    <a class="courseItem" href="/course/1414226975">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course605/cover/170904025334_42f1e9_61c8c582-c0e8-4bf9-bff4-2c180944e960_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  沟通技巧                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    张转玲</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/746842881">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course451/cover/170804073547_890b0f_02b2f74c-b0e4-4e83-9d72-34d53e4661ba_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  职业：道与术                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    长江互联网教育研究院</span><span class="courseItem-teacher oneline">
+                    汪军民</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/709376735">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course413/cover/170804073254_cf88a5_ae6d6118-18fb-48f2-bccf-d31789a3ba1d_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  创课—大学生创新创业基础                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    黑龙江大学</span><span class="courseItem-teacher oneline">
+                    李海东</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/588573364">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course330/cover/170822091403_013d75_01ff48eb-d24f-4ff5-be89-1b43c36b05b4_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  《菜根谭》与职场智慧                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    黑龙江大学</span><span class="courseItem-teacher oneline">
+                    霍明琨</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1471198271">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course253/cover/170804073500_86c444_071b9c9b-3291-49af-824f-1f42abd4975c_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  职场需要的18种能力                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    深圳大学</span><span class="courseItem-teacher oneline">
+                    林海鹰</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                    <a class="courseItem" href="/course/1269125603">
+            <div class="courseItem-img">
+              <img class="lazy-img" data-src="http://assets.uooconline.com/upload/uooc-www/course/course185/cover/170804073616_b9f662_42f2d327-b3d8-4acd-9851-713e7610f8cf_thumb.png">
+            </div>
+            <div class="courseItem-info">
+              <div class="courseItem-info-main">
+                <h3 class="courseItem-title oneline">
+                  创业：道与术                </h3>
+                <p class="courseItem-from">
+                  <span class="courseItem-org oneline">
+                    长江互联网教育研究院</span><span class="courseItem-teacher oneline">
+                    汪军民</span>
+                </p>
+              </div>
+            </div>
+          </a>
+                  </div>
+      </div>
+    </div>
+          </div>
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    // 登录绑定
+    $('#homeLogin').click(function () {
+      _M.layerLogin();
+    });
+
+    //  导航查看更多
+    $('#subjectNav-more').bind('mouseover', function () {
+      $('.slideBox').css('overflow', 'inherit')
+    })
+    $('.subjectNav').bind('mouseleave', function (e) {
+      $('.slideBox').css('overflow', 'hidden');
+    })
+
+    var swiperConfig = {
+      // loop: true, // 循环播放
+      autoplay: 4000, // 间隔4s
+      paginationClickable: true, // 分页可点击
+      autoplayDisableOnInteraction: false
+    };
+
+    // 首页 banner
+    new Swiper('#swiper-banner', $.extend({}, swiperConfig, {
+      centeredSlides: true,
+      pagination: '.banner-pagination',
+      nextButton: '.banner-next',
+      prevButton: '.banner-prev',
+    }));
+
+    // 推荐课程
+    new Swiper('#swiper-course', $.extend({}, swiperConfig, {
+      nextButton: '.recommendCourse-next',
+      prevButton: '.recommendCourse-prev',
+      slidesPerView: 5,
+      slidesPerGroup: 5,
+      spaceBetween: 50,
+    }));
+
+    // 广告 A
+    new Swiper('#swiper-position-a', $.extend({}, swiperConfig, {
+      loop: false,
+      slidesPerView: $('#swiper-position-a .swiper-slide').length < 2 ? 1 : 2,
+      slidesPerGroup: 2,
+      spaceBetween: 50
+    }));
+
+    // 广告 B
+    new Swiper('#swiper-position-b', $.extend({}, swiperConfig));
+
+    function AutoScroll(obj) {
+      $(obj).find("ul:first").animate({
+        marginTop: "-40px"
+      }, 1000, function () {
+        $(this).css({
+          marginTop: "0px"
+        }).find("li:first").appendTo(this);
+      });
+    }
+
+    var mynews = setInterval(function () {
+      AutoScroll("#indexNew-info");
+    }, 3000);
+
+    //当鼠标放上去的时候，滚动停止，鼠标离开的时候滚动开始
+    $("#indexNew-info").hover(function () {
+      clearInterval(mynews);
+    }, function () {
+      mynews = setInterval(function () {
+        AutoScroll("#indexNew-info");
+      }, 3000);
+    });
+  });
+</script>
+
+<!-- layout-footer -->
+<div class="layout-footer">
+  <div class="layout-wrapper clearfix">
+    <div class="footer-mod">
+      <a class="logo" href="http://www.uooconline.com"></a>
+    </div>
+    <div class="footer-mod">
+            <ul class="footer-nav clearfix">
+        <li>
+                    <a href="http://www.uooc.net.cn/league/union/intro#contact">关于我们</a>
+                  </li>
+        <li>
+          <a href="http://www.uooc.net.cn/misc/provision">服务条款</a>
+        </li>
+        
+        
+        <li>
+          <a href="http://www.uooconline.com/org-admin" target="_blank">机构管理</a>
+        </li>
+        <li>
+          <a href="http://www.uooc.net.cn/index/disclaimer">免责声明</a>
+        </li>
+      </ul>
+      
+      
+      <p class="copyright">
+        <a class="copyright-link" href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备16050337号-1</a>
+        <span style="margin: 0 5px;">|</span>
+        <a class="copyright-link" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030502001269">
+          <span class="copyright-logo"></span>粤公网安备 44030502001269号
+        </a>
+        <span style="margin: 0 5px;">|</span>
+        <a class="copyright-link" target="_blank" href="http://www.uooc.net.cn/misc/valicense">增值电信业务经营许可证B2-20173213</a>
+      </p>
+      <p class="copyright-msg">Copyright © 2015-
+        2019深圳市优课在线教育有限公司
+        (优课联盟)      </p>
+    </div>
+    <div class="footer-mod footer-server">
+      <a class="footer-server-qq" href="/index/service"><i class="iconfont icon-qq"></i>在线QQ客服</a>
+      <p class="service-time">客服工作时间：周一至周五 09:30-18:30</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- 浮动功能菜单 -->
+<div class="layout-app-funs">
+    <div class="app-funs" onclick="window.scrollTo(0,0);">
+        <span class="app-funs-icon icon iconfont icon-top"></span>
+        <span class="app-funs-txt app-funs-backtop"></span>
+    </div>
+    <div class="app-funs" id="uoochelp">
+        <span class="app-funs-icon icon iconfont icon-wenhao"></span>
+        <a class="app-funs-txt" href="http://www.uooc.net.cn/misc/support">优课<br />帮帮</a>
+    </div>
+    <div class="app-funs">
+        <span class="app-funs-icon icon iconfont icon-qq1"></span>
+        <a class="app-funs-txt" href="http://www.uooc.net.cn/index/service">在线<br />咨询</a>
+    </div>
+</div>
+
+<!-- 浏览器版本 -->
+<div id="bishiie-container" style="display: none;">
+    <div id="bishiie">
+        <h1>您的浏览器版本过低，请升级后再试！</h1>
+        <h2>为获得最佳浏览体验，建议您升级或选用以下浏览器。</h2>
+        <div style="margin:30px auto;width:800px">
+            <a class="browse bs360" title="下载360安全浏览器" target="_blank" href="http://se.360.cn/">
+                <p>360安全浏览器</p>
+            </a>
+            <a class="browse bsff" title="下载火狐浏览器" target="_blank" href="http://www.firefox.com.cn/">
+                <p>火狐浏览器</p>
+            </a>
+            <a class="browse bschrome" title="下载谷歌chrome浏览器" target="_blank" href="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8&oq=%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8&rsv_pq=be6cba4c0000413e&rsv_t=e7f7piiP15vapmOCh9Pnni4jjbWUai6Y3KjM4hWNRkrV47pzsTY1KeYuCeo&rqlang=cn&rsv_enter=0">
+                <p>谷歌浏览器</p>
+            </a>
+            <a class="browse bsie" title="下载IE浏览器" target="_blank" href="https://www.baidu.com/s?wd=ie10&ie=UTF-8">
+                <p>IE10+浏览器</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--[if lte IE 9]>
+    <script type="text/javascript">
+        document.getElementsByTagName("body")[0].innerHTML=document.getElementById("bishiie-container").innerHTML
+    </script>
+<![endif]-->
+
+<script type="text/javascript">
+    var isTeacherPage = location.href.search('/teacher/manage/course') > -1;
+    if(isTeacherPage) document.getElementById('uoochelp').style.display = 'none';
+</script><script type='text/javascript' src='//assets.uooconline.com/base/js/bootstrap-a6dd36daa6.js'></script>
+</body>

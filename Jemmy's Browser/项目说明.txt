@@ -1,0 +1,7 @@
+lib文件夹：存储的是此次项目调用的外部jar包；
+like文件夹：存储的是like.txt文件，保存收藏夹中的网页标题以及网页URL；
+src文件夹：
+	HTTPServer文件夹：存储的是在web服务器库中的文件，其中包含一些图片一些默认的网页文件；
+	MyBrowser.java//实现浏览器的主类
+	SendMail.java//对于发送邮件窗口的界面实现，以及发送邮件的功能实现
+	Download.java//对于下载文件的代码实现

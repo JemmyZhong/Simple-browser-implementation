@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: lib/dsn.jar lib/imap.jar lib/mail.jar lib/mailapi.jar lib/pop3.jar lib/smtp.jar lib/swt.jar lib/swt-debug.jar
+Main-Class: MyBrowser

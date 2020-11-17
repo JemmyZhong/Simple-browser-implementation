@@ -31,15 +31,15 @@
 
 <div align="center"> <img src="photo/1.jpg"</img> </div> 
 
-<center>图 1：客户端向服务器请求一张名为2.png的图片</center>
+<div align = "center">图 1：客户端向服务器请求一张名为2.png的图片</div>
 
 <div align="center"> <img src="photo/2.jpg"</img> </div> 
 
-<center>图 2：请求成功并传输成功</center>
+<div align = "center">图 2：请求成功并传输成功</div>
 
 <div align="center"> <img src="photo/3.jpg"</img> </div> 
 
-<center>图 3：成功传输并打开图片查看</center>
+<div align = "center">图 3：成功传输并打开图片查看</div>
 
 #### 对用户POST请求的处理：
 
@@ -47,7 +47,7 @@
 
 <div align="center"> <img src="photo/4.jpg"</img> </div> 
 
-<center>图 4：向服务器发出POST 1.jpg的请求</center>
+<div align = "center">图 4：向服务器发出POST 1.jpg的请求</div>
 
 - 如图5所示，需要根据服务器端中存储的数据库，即database.txt文件中的登录昵称以及登录密码输入之后，才能够让服务区向客户端发送出用户名的操作；
 
@@ -55,11 +55,11 @@
 
 <div align="center"> <img src="photo/5.jpg"</img> </div> 
 
-<center>图 5：服务器端的数据库数据</center>
+<div align = "center">图 5：服务器端的数据库数据</div>
 
 <div align="center"> <img src="photo/6.jpg"</img> </div> 
 
-<center>图 6：执行完POST指令之后的客户端的cookie值</center>
+<div align = "center">>图 6：执行完POST指令之后的客户端的cookie值</div>
 
 #### 能够稳定处理大量并发任务
 
@@ -69,27 +69,27 @@
 
 <div align="center"> <img src="photo/7.jpg"</img> </div> 
 
-<center>图 7：使用jmeter软件进行测试</center>
+<div align = "center">图 7：使用jmeter软件进行测试</div>
 
 <div align="center"> <img src="photo/8.jpg"</img> </div> 
 
-<center>图 8：测试参数</center>
+<div align = "center">图 8：测试参数</div>
 
 - 如图9所示，可见在线程数为200、循环次数为10次时，出现的异常率为5.40%，出现异常是该请求所能够承受的过载；
 
 <div align="center"> <img src="photo/9.jpg"</img> </div> 
 
-<center>图 9：测试结果</center>
+<div align = "center">图 9：测试结果</div>
 
 - 如图10所示是我使用不同数据即不同线程数进行测试的异常率数据表，图11为器对应的折线图；可见在处理较少线程数的时候异常率会减少很多；其中，在80线程数时，波动不大，因此在考虑实际问题时将客户量适当提高又不会很明显的影响异常率的时候，是能够提升很多客户容量的；
 
 <div align="center"> <img src="photo/10.jpg"</img> </div> 
 
-<center>图 10：数据表</center>
+<div align = "center">图 10：数据表</div>
 
 <div align="center"> <img src="photo/11.jpg"</img> </div> 
 
-<center>图 11：在不同线程下的异常率</center>   
+<div align = "center">图 11：在不同线程下的异常率</div>
 
 #### 回显客户端的请求，并将请求的报文等信息发送回客户端：
 
@@ -97,11 +97,11 @@
 
 <div align="center"> <img src="photo/12.jpg"</img> </div> 
 
-<center>图 12：响应客户端的请求信息</center>
+<div align = "center">图 12：响应客户端的请求信息</div>
 
 <div align="center"> <img src="photo/13.jpg"</img> </div> 
 
-<center>图 13：访问成功界面</center>
+<div align = "center">图 13：访问成功界面</div>
 
 
 
@@ -113,11 +113,11 @@
 
 <div align="center"> <img src="photo/14.jpg"</img> </div> 
 
-<center>图 14：网页浏览</center>
+<div align = "center">>图 14：网页浏览</div>
 
 ![img](photo/15.jpg)
 
-<center>图 15：访问百度网页</center>
+<div align = "center">图 15：访问百度网页</div>
 
 #### 浏览网页时，浏览器窗口的值边为所浏览网页的名称：
 
@@ -125,13 +125,13 @@
 
 <div align="center"> <img src="photo/16.jpg"</img> </div> 
 
-<center>图 16：默认网页的窗口名称</center>
+<div align = "center">图 16：默认网页的窗口名称</div>
 
 - 如图17所示，在对于访问内部网的时候，便会将浏览器窗口的名称修改为深圳大学内部网的名称；可见在对于浏览对应网页时，浏览器的窗口名称会灵动的修改为所浏览网页的网址的名称；
 
 <div align="center"> <img src="photo/17.jpg"</img> </div> 
 
-<center>图 17：修改网页窗口名称</center>
+<div align = "center">图 17：修改网页窗口名称</div>
 
 #### 支持打开本地文件夹的功能：
 
@@ -139,11 +139,11 @@
 
 <div align="center"> <img src="photo/18.jpg"</img> </div> 
 
-<center>图 18：打开本地文件夹的功能实现</center>
+<div align = "center">图 18：打开本地文件夹的功能实现</div>
 
 <div align="center"> <img src="photo/19.jpg"</img> </div> 
 
-<center>图 19：打开本地文件夹功能结果</center>
+<div align = "center">图 19：打开本地文件夹功能结果</div>
 
 #### 对于浏览器的前进、后退以及刷新功能的实现：
 
@@ -151,7 +151,7 @@
 
 <div align="center"> <img src="photo/20.jpg"</img> </div> 
 
-<center>图 20：示例</center>
+<div align = "center">图 20：示例</div>
 
 #### 对于浏览器的智能搜索栏的实现：
 
@@ -159,11 +159,11 @@
 
 <div align="center"> <img src="photo/21.jpg"</img> </div> 
 
-> <center>图 21：在地址栏进行搜索非网址内容</center>
+> <div align = "center">图 21：在地址栏进行搜索非网址内容</div>
 
 <div align="center"> <img src="photo/22.jpg"</img> </div> 
 
-<center>图 22：搜索非网址内容结果</center>
+<div align = "center">图 22：搜索非网址内容结果</div>
 
 #### 对于浏览器可以进行发送邮件功能的实现
 
@@ -171,8 +171,8 @@
 
 <div align="center"> <img src="photo/23.jpg"</img> </div> 
 
-<center>图 23：邮件发送按钮所在位置</center>
+<div align = "center">图 23：邮件发送按钮所在位置</div>
 
 <div align="center"> <img src="photo/24.jpg"</img> </div> 
 
-<center>图 24：点击发送之后弹出的邮件窗口</center>
+<div align = "center">图 24：点击发送之后弹出的邮件窗口</div>
